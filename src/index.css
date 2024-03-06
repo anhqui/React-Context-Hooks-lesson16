@@ -1,0 +1,37 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #553055;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App{
+    background-color: #4c2a4c;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 700px;
+    color: #eee;
+  }
+
+  /* Nabar */
+  .navbar{
+    padding: 10px 20px;
+    text-align: center;
+    background-color: #6d3d6d;
+  }
+
+  .navbar h1{
+    font-size: 2.5rem;
+    margin: 10px 0;
+  }
+
+  .navbar p{
+    font-size: 1.2rem;
+  }
+  
