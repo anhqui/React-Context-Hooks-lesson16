@@ -1,23 +1,13 @@
-import { createContext, useState } from "react";
-import { v4 as uuidv4 } from "uuid";
+import { createContext, useReducer } from "react";
+import bookReducer from "../reducers/bookReducer";
 
 export const BookContext = createContext();
 
 const BookContextProvider = (props) => {
-  const [books, setBooks] = useState([
-    { title: "To Kill a Mockingbird", author: "Harper Lee", id: 1 },
-    { title: "Don Quixote", author: "Miguel de Cervantes", id: 2 },
-    { title: "War and Peace", author: "Leo Tolstoy", id: 3 },
-    { title: "Gone with the Wind", author: "Margaret Mitchell", id: 4 },
-  ]);
-  const addBook = (title, author) => {
-    setBooks([...books, { title, author, id: uuidv4() }]);
-  };
-  const removeBook = (id) => {
-    setBooks(books.filter((book) => book.id !== id));
-  };
+  const [books, dispatch] = useReducer(bookReducer, []);
+
   return (
-    <BookContext.Provider value={{ books, addBook, removeBook }}>
+    <BookContext.Provider value={{ books, dispatch }}>
       {props.children}
     </BookContext.Provider>
   );
